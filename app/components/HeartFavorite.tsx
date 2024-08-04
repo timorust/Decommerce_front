@@ -33,7 +33,10 @@ const HeartFavorite = ({ product }: { product: ProductType }) => {
 		if (user) getUser()
 	}, [user])
 
-	const handleLike = async () => {
+	const handleLike = async (
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
+		e.preventDefault()
 		try {
 			if (!user) {
 				router.push('/sign-in')
