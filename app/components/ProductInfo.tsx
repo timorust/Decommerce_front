@@ -38,8 +38,8 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
 						{productInfo.colors.map((color, index) => (
 							<p
 								key={index}
-								className={`border border-black px-2 py-1 rounded-lg cursor-pointer ${
-									selectedColor === color && 'bg-black text-white'
+								className={`border border-blue-1 px-2 py-1 rounded-lg cursor-pointer ${
+									selectedColor === color && 'bg-blue-1 text-white'
 								}`}
 								onClick={() => setSelectedColor(color)}
 							>
@@ -58,8 +58,8 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
 						{productInfo.sizes.map((size, index) => (
 							<p
 								key={index}
-								className={`border border-black px-2 py-1 rounded-lg cursor-pointer ${
-									selectedSize === size && 'bg-black text-white'
+								className={`border border-blue-1 px-2 py-1 rounded-lg cursor-pointer ${
+									selectedSize === size && 'bg-blue-1 text-white'
 								}`}
 								onClick={() => setSelectedSize(size)}
 							>
@@ -87,7 +87,7 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
 				</div>
 			</div>
 
-			<button className='outline text-base-bold py-3 rounded-lg hover:bg-blue-500 hover:text-white'>
+			<button className='outline text-base-bold py-3 rounded-lg hover:bg-blue-1  text-blue-1 border-blue-1 hover:text-white'>
 				Add To Card
 			</button>
 		</div>

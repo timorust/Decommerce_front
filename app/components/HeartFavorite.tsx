@@ -11,6 +11,7 @@ const HeartFavorite = ({ product }: { product: ProductType }) => {
 
 	const [loading, setLoading] = useState(false)
 	const [signedInUser, setSignedInUser] = useState<UserType | null>(null)
+
 	const [isLiked, setIsLiked] = useState(false)
 
 	const getUser = async () => {
