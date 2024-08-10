@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import HeartFavorite from './HeartFavorite'
 import { MinusCircle, PlusCircle } from 'lucide-react'
+import useCart from '@/lib/hooks/useCart'
 
 const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
 	const [selectedColor, setSelectedColor] = useState<string>(
@@ -10,6 +11,8 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
 	)
 	const [selectedSize, setSelectedSize] = useState<string>(productInfo.sizes[0])
 	const [quantity, setQuantity] = useState<number>(1)
+
+	const cart = useCart()
 
 	return (
 		<div className='max-w-[400px] flex flex-col gap-4'>
@@ -87,7 +90,17 @@ const ProductInfo = ({ productInfo }: { productInfo: ProductType }) => {
 				</div>
 			</div>
 
-			<button className='outline text-base-bold py-3 rounded-lg hover:bg-blue-1  text-blue-1 border-blue-1 hover:text-white'>
+			<button
+				className='outline text-base-bold py-3 rounded-lg hover:bg-blue-1  text-blue-1 border-blue-1 hover:text-white'
+				onClick={() => {
+					cart.addItem({
+						item: productInfo,
+						quantity,
+						color: selectedColor,
+						size: selectedSize,
+					})
+				}}
+			>
 				Add To Card
 			</button>
 		</div>

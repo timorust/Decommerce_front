@@ -56,7 +56,7 @@ const HeartFavorite = ({ product }: { product: ProductType }) => {
 				setIsLiked(updatedUser.wishlist.includes(product._id))
 			}
 		} catch (error) {
-			console.log('[wishlist_POST', error)
+			console.log('[wishlist_POST]', error)
 		}
 	}
 	return (
